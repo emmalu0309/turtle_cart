@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.loginform{
+    display: flex;
+    justify-content: center;
+    margin: 7%;
+    flex-direction: column;
+    background-color: lightgrey;
+    padding: 100px;
+    border-radius: 20px;
+}
+.title{
+    font-size: 40px;
+    margin-top: 0;
+}
+.input{
+    border: 1px solid lightgray;    
+}
+.smtitle{
+    font-size: 20px;
+}
+.loginBtn{
+    width: 50px;
+    height: 20px;
+}
