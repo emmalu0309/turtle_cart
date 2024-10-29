@@ -5,6 +5,9 @@ body {
     align-items: center;
     height: 100vh; /* 讓內容在整個視窗高度內居中 */
     margin: 0;
+    font-family: Microsoft JhengHei;
+    background-color: #E1E1DF;
+
 }
 
 /* 調整 .loginform 的外觀，並使其垂直居中 */
@@ -21,8 +24,6 @@ body {
     width: 100%;
 }
 
-
-/* 其他樣式保持不變 */
 .input {
     border: 1px solid lightgray;
     padding: 8px;
@@ -53,27 +54,24 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: #E1E1DF;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
 }
 
-/* title 样式 */
 .title {
     font-size: 40px;
     font-weight: bold;
     margin: 0;
 }
 
-/* icon 容器样式 */
 .icon-container {
     display: flex;
     gap: 15px;
 }
 
-/* icon 样式 */
 .icon {
     width: 35px;
     height: 35px;

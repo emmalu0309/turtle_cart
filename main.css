@@ -1,3 +1,7 @@
+body{
+    font-family: Microsoft JhengHei;
+    background-color: #E1E1DF;
+}
 .header {
     width: 98%;
     display: flex;
@@ -9,22 +13,20 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    background-color: #E1E1DF;
 }
 
-/* title 样式 */
 .title {
     font-size: 40px;
     font-weight: bold;
     margin: 0;
 }
 
-/* icon 容器样式 */
 .icon-container {
     display: flex;
     gap: 15px;
 }
 
-/* icon 样式 */
 .icon {
     width: 35px;
     height: 35px;
@@ -33,12 +35,6 @@
 }
 .turtle{
     display: flex;
-    /* justify-content:center; */
-    /* flex-wrap: wrap; */
-    
-    /* flex-direction: column; */
-
-    /* object-fit:contain; */
 }
 .turtlepicdiv{
  width: 300px;

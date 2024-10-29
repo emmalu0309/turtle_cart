@@ -1,4 +1,4 @@
-//從localStorage 加載購物車數據
+// 從 localStorage 加載購物車數據
 function loadCartFromLocalStorage() {
     const cartItems = document.getElementById("cartItems");
     const totalPriceElement = document.getElementById("totalPrice");
@@ -28,7 +28,6 @@ function loadCartFromLocalStorage() {
 
 // 頁面加載
 document.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);
-
 
 // 檢查本地儲存的購物車資料
 function getCart() {
@@ -72,29 +71,15 @@ function displayCart() {
     totalPrice.textContent = `總價: $${total}`;
 }
 
-// 結帳功能
-function checkout() {
+// 結帳按鈕點擊事件，檢查購物車是否有內容
+document.getElementById("checkoutBtn").addEventListener("click", function() {
     let cart = getCart();
     if (cart.length === 0) {
-        alert("購物車是空的！");
-        return;
+        alert("購物車是空的，無法結帳！");
+    } else {
+        // 顯示寄送資料表單
+        document.getElementById("shippingForm").style.display = "block";
     }
-
-    let messageDiv = document.getElementById("checkoutMessage");
-    messageDiv.textContent = "結帳成功！感謝您的購買。";
-
-    localStorage.removeItem("cart");  // 清空購物車
-    displayCart();
-}
-
-// 初始化購物車頁面
-if (window.location.pathname.includes("cart.html")) {
-    displayCart();
-}
-
-document.getElementById("checkoutBtn").addEventListener("click", function() {
-    // 顯示寄送資料表單
-    document.getElementById("shippingForm").style.display = "block";
 });
 
 // 處理表單提交
@@ -106,12 +91,31 @@ document.getElementById("shippingInfoForm").addEventListener("submit", function(
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
 
-    // 在此處可以添加保存或發送訂單資料的代碼
-    alert(`訂單已確認！\n${cart} 姓名: ${name}\n地址: ${address}\n電話: ${phone}\n電子郵件: ${email}`);
+    // 新增訂單商品及價格的訊息
+    const cart = getCart();
+    let orderDetails = "訂單內容：\n";
+    let total = 0;
+    
+    cart.forEach(item => {
+        orderDetails += `${item.name} - $${item.price} x ${item.quantity}\n`;
+        total += item.price * item.quantity;
+    });
+    
+    orderDetails += `總價: $${total}`;
+
+    // 顯示訂單確認訊息，包括訂單內容
+    alert(`訂單已確認！\n姓名: ${name}\n地址: ${address}\n電話: ${phone}\n電子郵件: ${email}\n\n${orderDetails}`);
 
     // 清空表單並隱藏寄送資料表單
     document.getElementById("shippingInfoForm").reset();
     document.getElementById("shippingForm").style.display = "none";
+
+    // 清空購物車
+    localStorage.removeItem("cart");
+    displayCart();
 });
 
-
+// 初始化購物車頁面
+if (window.location.pathname.includes("cart.html")) {
+    displayCart();
+}

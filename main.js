@@ -1,7 +1,7 @@
 // 初始化購物車
 let cart = [];
 
-// 添加商品到购物车
+// 添加商品到購物車
 function addToCart(productName, productPrice) {
     const existingProduct = cart.find(item => item.name === productName);
 
@@ -11,15 +11,15 @@ function addToCart(productName, productPrice) {
         cart.push({ name: productName, price: productPrice, quantity: 1 });
     }
     updateCart();
-    saveCartToLocalStorage(); // 保存购物车数据到 localStorage
+    saveCartToLocalStorage(); // 保存購物車數據到 localStorage
 }
 
-// 更新购物车显示
+// 更新購物車顯示
 function updateCart() {
     const cartItems = document.getElementById("cartItems");
     const totalPriceElement = document.getElementById("totalPrice");
 
-    cartItems.innerHTML = ""; // 清空当前购物车列表
+    cartItems.innerHTML = ""; // 清空當前購物車列表
 
     let totalPrice = 0;
     cart.forEach(item => {
@@ -33,12 +33,12 @@ function updateCart() {
     totalPriceElement.textContent = `總價: $${totalPrice}`;
 }
 
-// 保存购物车数据到 localStorage
+// 保存購物車數據 localStorage
 function saveCartToLocalStorage() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// 页面加载时从 localStorage 恢复购物车数据
+// 頁面加載時從 localStorage 恢復數據庫資料
 function loadCartFromLocalStorage() {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -47,5 +47,5 @@ function loadCartFromLocalStorage() {
     }
 }
 
-// 初始化页面时调用
+// 初始化頁面時調用
 loadCartFromLocalStorage();
