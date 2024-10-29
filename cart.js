@@ -26,6 +26,7 @@ function loadCartFromLocalStorage() {
     totalPriceElement.textContent = `總價: $${totalPrice}`;
 }
 
+
 // 頁面加載
 document.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);
 
@@ -134,4 +135,48 @@ document.getElementById("checkoutBtn").addEventListener("click", function() {
         document.getElementById("shippingForm").style.display = "block";
     }
 });
+
+
+
+
+// 初始化頁面
+// document.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);
+document.addEventListener("DOMContentLoaded", displayCart);
+
+function displayCart() {
+    let cart = getCart();
+    let cartItems = document.getElementById("cartItems");
+    let totalPrice = document.getElementById("totalPrice");
+
+    cartItems.innerHTML = ""; // 清空當前購物車列表
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        let li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price} x ${item.quantity} `;
+
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "刪除";
+        deleteButton.classList.add("delete-button");
+        deleteButton.addEventListener("click", function() {
+            removeFromCart(index);
+        });
+
+        li.appendChild(deleteButton);
+        cartItems.appendChild(li);
+
+        total += item.price * item.quantity;
+    });
+
+    totalPrice.textContent = `總價: $${total}`;
+}
+
+function removeFromCart(index) {
+    let cart = getCart();
+    cart.splice(index, 1);
+    saveCart(cart);
+    displayCart();
+}
+
+
 

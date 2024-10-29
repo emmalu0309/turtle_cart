@@ -11,7 +11,7 @@ function addToCart(productName, productPrice) {
         cart.push({ name: productName, price: productPrice, quantity: 1 });
     }
     updateCart();
-    saveCartToLocalStorage(); // 保存購物車數據到 localStorage
+    saveCartToLocalStorage(); // 保存購物車數據到 localStorage   
 }
 
 // 更新購物車顯示
