@@ -3,101 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>会员注册与登录</title>
+    <title>購物車結帳系統</title>
+    <link rel="stylesheet" href="test.css">
 </head>
 <body>
-    <!-- 切换登录/注册的按钮 -->
-    <button id="toggleButton">登录/注册</button>
+    <div class="checkout-container">
+        <h2>購物車</h2>
+        <p>總價: $7100</p>
+        <button id="checkoutBtn">結帳</button>
 
-    <!-- 登录表单 -->
-    <div id="loginForm" style="display:none;">
-        <h2>会员登录</h2>
-        <form id="login">
-            <input type="text" id="loginUsername" placeholder="用户名" required><br>
-            <input type="password" id="loginPassword" placeholder="密码" required><br>
-            <button type="button" id="loginBtn">登录</button>
-        </form>
-        <p>没有账户？<a href="#" id="showRegister">点击注册</a></p>
+        <!-- 寄送資料表單 -->
+        <div id="shippingForm" style="display: none;">
+            <h2>填寫寄送資料</h2>
+            <form id="shippingInfoForm">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="address">地址：</label>
+                <input type="text" id="address" name="address" required><br><br>
+                
+                <label for="phone">電話：</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <button type="submit">確認訂單</button>
+            </form>
+        </div>
     </div>
 
-    <!-- 注册表单，默认隐藏 -->
-    <div id="registerForm" style="display:none;">
-        <h2>会员注册</h2>
-        <form id="register">
-            <input type="text" id="registerUsername" placeholder="用户名" required><br>
-            <input type="password" id="registerPassword" placeholder="密码" required><br>
-            <button type="button" id="registerBtn">注册</button>
-        </form>
-        <p>已有账户？<a href="#" id="showLogin">点击登录</a></p>
-    </div>
-
-    <div id="message"></div>
-
-    <script>
-        // 用户数据存储
-const users = []; // 简单的数组模拟数据库
-
-document.getElementById('toggleButton').addEventListener('click', function() {
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-
-    // 切换表单的显示状态
-    if (loginForm.style.display === 'none' && registerForm.style.display === 'none') {
-        loginForm.style.display = 'block'; // 显示登录表单
-    } else {
-        loginForm.style.display = 'none'; // 隐藏登录表单
-        registerForm.style.display = 'none'; // 隐藏注册表单
-    }
-});
-
-// 注册功能
-document.getElementById('registerBtn').addEventListener('click', function() {
-    const username = document.getElementById('registerUsername').value;
-    const password = document.getElementById('registerPassword').value;
-    const messageDiv = document.getElementById('message');
-
-    // 简单的重复注册检查
-    if (users.find(user => user.username === username)) {
-        messageDiv.textContent = '用户名已存在，请选择其他用户名。';
-        return;
-    }
-
-    // 注册用户
-    users.push({ username, password });
-    messageDiv.textContent = '注册成功！';
-    document.getElementById('register').reset(); // 清空注册表单
-});
-
-// 登录功能
-document.getElementById('loginBtn').addEventListener('click', function() {
-    const username = document.getElementById('loginUsername').value;
-    const password = document.getElementById('loginPassword').value;
-    const messageDiv = document.getElementById('message');
-
-    // 验证用户
-    const user = users.find(user => user.username === username && user.password === password);
-    if (user) {
-        messageDiv.textContent = `欢迎回来，${username}！`;
-    } else {
-        messageDiv.textContent = '用户名或密码错误。';
-    }
-});
-
-// 切换到注册表单
-document.getElementById('showRegister').addEventListener('click', function() {
-    document.getElementById('loginForm').style.display = 'none'; // 隐藏登录表单
-    document.getElementById('registerForm').style.display = 'block'; // 显示注册表单
-    document.getElementById('message').textContent = ''; // 清空消息
-});
-
-// 切换到登录表单
-document.getElementById('showLogin').addEventListener('click', function() {
-    document.getElementById('registerForm').style.display = 'none'; // 隐藏注册表单
-    document.getElementById('loginForm').style.display = 'block'; // 显示登录表单
-    document.getElementById('message').textContent = ''; // 清空消息
-});
-
-    </script>
+    <script src="test.js"></script>
 </body>
 </html>

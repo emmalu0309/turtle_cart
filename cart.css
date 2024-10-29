@@ -1,0 +1,50 @@
+.header {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* title 样式 */
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* icon 容器样式 */
+.icon-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* icon 样式 */
+.icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    padding: 20px;
+}
+a {
+    text-decoration: none; /* 去掉下划线 */
+    color: inherit; /* 使用父元素颜色，或者你也可以指定颜色 */
+}
+
+/* 去除点击后的紫色效果 */
+a:visited {
+    color: inherit; /* 使用父元素颜色，防止变紫 */
+}
+.cart{
+    margin-top: 200px;
+    margin: 100px auto;
+    width: 400px;
+    background-color: lightgray;
+    padding: 30px;
+    border-radius: 30px;
+}

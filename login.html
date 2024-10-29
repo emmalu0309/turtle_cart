@@ -7,6 +7,14 @@
     <title>會員註冊</title>
 </head>
 <body>
+    <div class="header">
+        <a href="mymain.html"><div class="title">烏龜專賣店</div></a>
+        <div class="icon-container">
+           <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon" ></a>
+            <a href="cart.html"><img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon"></a>
+            <a href="aboutus.html"><img src="../img/doc_icon.png" alt="關於我們" id="docIcon" class="icon"></a>
+        </div>
+    </div>
 
     <!-- 登入表單 -->
     <div id="loginForm"  style="display:none;" class="loginform">
@@ -18,12 +26,13 @@
             <input type="password" id="loginPassword" placeholder="請輸入密碼" required class="input"><br>
             <button type="button" id="loginBtn" class="loginBtn">登入</button>
         </form>
-        <p>還不是會員？<a href="#" id="showRegister">註冊</a></p> <!-- 新增連結 -->
+        <p>還不是會員？<a href="#" id="showRegister">註冊</a></p>
+        <div id="message"></div>
     </div>
 
     <!-- 註冊表單，默認顯示 -->
     <div id="registerForm" class="loginform">
-        <h2 class="title">會員註冊</h2>
+        <h2 class="title" >會員註冊</h2>
         <form id="register">
             <span class="smtitle">帳號</span>
             <input type="text" id="registerUsername" placeholder="請輸入帳號" required class="input"><br>
@@ -31,10 +40,10 @@
             <input type="password" id="registerPassword" placeholder="請輸入密碼" required class="input"><br>
             <button type="button" id="registerBtn" class="loginBtn">註冊</button>
         </form>
-        <p>已經是會員？<a href="#" id="showLogin">點擊登入</a></p> <!-- 新增連結 -->
+        <p>已經是會員？<a href="#" id="showLogin">點擊登入</a></p>
+        <div id="message"></div>
     </div>
 
-    <div id="message"></div>
 
     <script src="login.js"></script>
 </body>

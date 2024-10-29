@@ -14,34 +14,74 @@
     <div class="header">
         <div class="title">烏龜專賣店</div>
         <div class="icon-container">
-           <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon" ></a>
-            <img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon">
-            <img src="../img/doc_icon.png" alt="關於我們" id="docIcon" class="icon">
-            <img src="../img/contact_icon.png" alt="聯絡我們" id="contactIcon" class="icon">
+            <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon"></a>
+            <a href="cart.html"><img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon"></a>
+            <a href="aboutus.html"><img src="../img/doc_icon.png" alt="關於我們" id="docIcon" class="icon"></a>
         </div>
     </div>
 
-    <div class="turtle" style="border: 1px solid black;">
-        <div class="turtlepicdiv" style="border: 1px solid black;">
+    <div class="turtletitle" style="margin-top: 130px;">陸龜</div>
+    <div class="turtle" id="productList">
+        <div class="turtlepicdiv">
             <img src="../img/LeopardTortoise.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic"
                 style="border: 1px solid black;">
+            <div>豹龜</div>
+            <button onclick="addToCart('豹龜', 3260)">加入購物車</button>
         </div>
         <div class="turtlepicdiv">
-            <img src="../img/LeopardTortoise.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <img src="../img/赫曼.png" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>赫曼</div>
+            <button onclick="addToCart('赫曼', 1280)">加入購物車</button>
         </div>
         <div class="turtlepicdiv">
-            <img src="../img/LeopardTortoise.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <img src="../img/紅腿象龜.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>紅腿象龜</div>
+            <button onclick="addToCart('紅腿象龜', 3000)">加入購物車</button>
         </div>
         <div class="turtlepicdiv">
-            <img src="../img/LeopardTortoise.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <img src="../img/蘇卡達.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>蘇卡達</div>
+            <button onclick="addToCart('蘇卡達', 2800)">加入購物車</button>
         </div>
-
     </div>
-    
+
+    <div class="turtletitle">澤龜</div>
+    <div class="turtle2">
+        <div class="turtlepicdiv">
+            <img src="../img/沼澤側頸龜.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>沼澤側頸龜</div>
+            <button onclick="addToCart('沼澤側頸龜', 1180)">加入購物車</button>
+        </div>
+        <div class="turtlepicdiv">
+            <img src="../img/甜甜圈龜.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>甜甜圈龜</div>
+            <button onclick="addToCart('甜甜圈龜', 500)">加入購物車</button>
+        </div>
+        <div class="turtlepicdiv">
+            <img src="../img/麝香蛋龜.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>麝香蛋龜</div>
+            <button onclick="addToCart('麝香蛋龜', 777)">加入購物車</button>
+        </div>
+        <div class="turtlepicdiv">
+            <img src="../img/歐洲澤龜.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+            <div>歐洲澤龜</div>
+            <button onclick="addToCart('歐洲澤龜', 2680)">加入購物車</button>
+        </div>
+    </div>
+    <br><br><br>
 
 
+    <!-- 購物車 -->
+    <!-- <div id="cart">
+        <h2>購物車</h2>
+        <ul id="cartItems"></ul>
+        <p id="totalPrice">總價: $0</p>
+    </div> -->
 
-<script src="myscript.js"></script>
+    <script src="mymain.js"></script>
+    <script src="cart.js"></script>
+
+
 </body>
 
 </html>

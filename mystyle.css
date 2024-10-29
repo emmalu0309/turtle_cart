@@ -1,15 +1,35 @@
-.icon{
-    width: 35px;
-    padding: 20px;
-    
-}
-.header{
+.header {
+    width: 98%;
     display: flex;
-    justify-content:space-between;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
-.title{
-    font-size: 50px;
+
+/* title 样式 */
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* icon 容器样式 */
+.icon-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* icon 样式 */
+.icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    padding: 20px;
 }
 .turtle{
     display: flex;
@@ -32,3 +52,13 @@
    border-radius: 30px;
   
 }
+.turtle2{
+    display: flex;
+
+}
+.turtletitle{
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+

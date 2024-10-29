@@ -25,7 +25,7 @@ document.getElementById('registerBtn').addEventListener('click', function() {
         document.getElementById('registerForm').style.display = 'none'; // 隱藏註冊表單
         document.getElementById('loginForm').style.display = 'block'; // 顯示登入表單
         messageDiv.textContent = ''; // 清空消息
-    }, 1000); // 2秒後切换
+    }, 1000); // 1秒後切换
 });
 
 // 登入功能
@@ -37,7 +37,8 @@ document.getElementById('loginBtn').addEventListener('click', function() {
     // 驗證用戶
     const user = users.find(user => user.username === username && user.password === password);
     if (user) {
-        messageDiv.textContent = `歡迎回來，${username}！`;
+        // messageDiv.textContent = `歡迎回來，${username}！`;
+        window.location.href = "cart.html";
     } else {
         messageDiv.textContent = '帳號或密碼錯誤。';
     }
