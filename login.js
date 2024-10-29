@@ -57,3 +57,27 @@ document.getElementById('showLogin').addEventListener('click', function(e) {
     document.getElementById('registerForm').style.display = 'none'; // 隱藏註冊表單
     document.getElementById('loginForm').style.display = 'block'; // 顯示登入表單
 });
+// 登入功能
+document.getElementById('loginBtn').addEventListener('click', function() {
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+    const messageDiv = document.getElementById('message');
+
+    // 驗證用戶
+    const user = users.find(user => user.username === username && user.password === password);
+    if (user) {
+        // 設置登入狀態
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = "cart.html";
+    } else {
+        messageDiv.textContent = '帳號或密碼錯誤。';
+    }
+});
+
+// 登出功能
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = "login.html"; // 導向登入頁面
+}
+
+

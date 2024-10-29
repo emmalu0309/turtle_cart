@@ -119,3 +119,19 @@ document.getElementById("shippingInfoForm").addEventListener("submit", function(
 if (window.location.pathname.includes("cart.html")) {
     displayCart();
 }
+// 結帳按鈕點擊事件，檢查購物車是否有內容
+document.getElementById("checkoutBtn").addEventListener("click", function() {
+    let cart = getCart();
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (!isLoggedIn) {
+        alert("請先登入才能結帳！");
+        window.location.href = "login.html"; // 導向登入頁面
+    } else if (cart.length === 0) {
+        alert("購物車是空的，無法結帳！");
+    } else {
+        // 顯示寄送資料表單
+        document.getElementById("shippingForm").style.display = "block";
+    }
+});
+

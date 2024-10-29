@@ -38,10 +38,11 @@ body {
 }
 
 .loginBtn {
-    width: 100%;
+    width: 45%;
     height: 40px;
     margin-top: 10px;
     cursor: pointer;
+
 }
 
 a {
