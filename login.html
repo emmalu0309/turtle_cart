@@ -17,36 +17,22 @@
         </div>
     </div>
 
-    <!-- 登入表單 -->
-    <div id="loginForm"  style="display:none;" class="loginform">
+    
+    <div class="loginform">
         <h2 class="title">會員登入</h2>
         <form id="login">
-            <span class="smtitle">帳號</span>
-            <input type="text" id="loginUsername" placeholder="請輸入帳號" required class="input"><br>
-            <span class="smtitle">密碼</span>
-            <input type="password" id="loginPassword" placeholder="請輸入密碼" required class="input"><br>
+            <span class="smtitle" for="loginUsername">帳號:</span>
+            <input type="text" id="loginUsername" required class="input"><br>
+            <span class="smtitle" for="loginPassword">密碼:</span>
+            <input type="password" id="loginPassword" required class="input">
             <button type="button" id="loginBtn" class="loginBtn">登入</button>
-            <button type="button" id="logoutBtn" class="loginBtn" onclick="logout()">登出</button>
+            <button type="button" id="loginBtn" class="loginBtn" onclick="logout()">登出</button>
         </form>
-        <p>還不是會員？<a href="#" id="showRegister">註冊</a></p>
+        <p>還沒有帳號？<a href="register.html">註冊</a></p>
         <div id="message"></div>
     </div>
-
-    <!-- 註冊表單，默認顯示 -->
-    <div id="registerForm" class="loginform">
-        <h2 class="title" >會員註冊</h2>
-        <form id="register">
-            <span class="smtitle">帳號</span>
-            <input type="text" id="registerUsername" placeholder="請輸入帳號" required class="input"><br>
-            <span class="smtitle">密碼</span>
-            <input type="password" id="registerPassword" placeholder="請輸入密碼" required class="input"><br>
-            <button type="button" id="registerBtn" class="loginBtn">註冊</button>
-        </form>
-        <p>已經是會員？<a href="#" id="showLogin">點擊登入</a></p>
-        <div id="message"></div>
-    </div>
-
 
     <script src="login.js"></script>
 </body>
 </html>
+    
