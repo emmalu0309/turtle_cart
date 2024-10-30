@@ -25,21 +25,19 @@ function addToCart(productName, productPrice) {
 function updateCart() {
     const cartItems = document.getElementById("cartItems");
     const totalPriceElement = document.getElementById("totalPrice");
-    if (cartItems != null){
-        cartItems.innerHTML = ""; // 清空當前購物車列表
-    }
-    
+
+    cartItems.innerHTML = ""; // 清空當前購物車列表
+
     let totalPrice = 0;
     cart.forEach(item => {
         const itemElement = document.createElement("li");
         itemElement.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
-        cartItems?.appendChild(itemElement);
+        cartItems.appendChild(itemElement);
 
         totalPrice += item.price * item.quantity;
     });
-    if (totalPriceElement != null){
-        totalPriceElement.textContent = `總價: $${totalPrice}`;
-    }
+
+    totalPriceElement.textContent = `總價: $${totalPrice}`;
 }
 
 // 保存購物車數據到 localStorage
