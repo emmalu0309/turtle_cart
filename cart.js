@@ -12,8 +12,9 @@ function loadCartFromLocalStorage() {
     
     const cart = JSON.parse(savedCart);
     let totalPrice = 0;
-
-    cartItems.innerHTML = ""; // 清空當前購物車列表
+    if (cartItems != null){
+        cartItems.innerHTML = ""; // 清空當前購物車列表
+    }
 
     cart.forEach(item => {
         const itemElement = document.createElement("li");
@@ -23,7 +24,9 @@ function loadCartFromLocalStorage() {
         totalPrice += item.price * item.quantity;
     });
 
-    totalPriceElement.textContent = `總價: $${totalPrice}`;
+    if (totalPriceElement != null){
+        totalPriceElement.textContent = `總價: $${totalPrice}`;
+    }
 }
 
 
@@ -41,17 +44,17 @@ function saveCart(cart) {
 }
 
 // 將商品加入購物車
-function addToCart(name, price) {
-    let cart = getCart();
-    let item = cart.find(product => product.name === name);
-    if (item) {
-        item.quantity += 1;  // 如果商品已存在，增加數量
-    } else {
-        cart.push({ name: name, price: price, quantity: 1 });  // 新增商品
-    }
-    saveCart(cart);
-    // alert(`${name} 已加入購物車`);
-}
+// function addToCart(name, price) {
+//     let cart = getCart();
+//     let item = cart.find(product => product.name === name);
+//     if (item) {
+//         item.quantity += 1;  // 如果商品已存在，增加數量
+//     } else {
+//         cart.push({ name: name, price: price, quantity: 1 });  // 新增商品
+//     }
+//     saveCart(cart);
+//     // alert(`${name} 已加入購物車`);
+// }
 
 // 在 cart.html 顯示購物車內容
 function displayCart() {
@@ -73,7 +76,7 @@ function displayCart() {
 }
 
 // 結帳按鈕點擊事件，檢查購物車是否有內容
-document.getElementById("checkoutBtn").addEventListener("click", function() {
+document.getElementById("checkoutBtn")?.addEventListener("click", function() {
     let cart = getCart();
     if (cart.length === 0) {
         alert("購物車是空的，無法結帳！");
@@ -84,7 +87,7 @@ document.getElementById("checkoutBtn").addEventListener("click", function() {
 });
 
 // 處理表單提交
-document.getElementById("shippingInfoForm").addEventListener("submit", function(event) {
+document.getElementById("shippingInfoForm")?.addEventListener("submit", function(event) {
     event.preventDefault(); // 防止表單提交後刷新頁面
 
     const name = document.getElementById("name").value;
@@ -121,7 +124,7 @@ if (window.location.pathname.includes("cart.html")) {
     displayCart();
 }
 // 結帳按鈕點擊事件，檢查購物車是否有內容
-document.getElementById("checkoutBtn").addEventListener("click", function() {
+document.getElementById("checkoutBtn")?.addEventListener("click", function() {
     let cart = getCart();
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
@@ -148,7 +151,9 @@ function displayCart() {
     let cartItems = document.getElementById("cartItems");
     let totalPrice = document.getElementById("totalPrice");
 
-    cartItems.innerHTML = ""; // 清空當前購物車列表
+    if (cartItems != null){
+        cartItems.innerHTML = ""; // 清空當前購物車列表
+    }
     let total = 0;
 
     cart.forEach((item, index) => {
@@ -167,8 +172,9 @@ function displayCart() {
 
         total += item.price * item.quantity;
     });
-
-    totalPrice.textContent = `總價: $${total}`;
+    if (totalPrice != null){
+        totalPrice.textContent = `總價: $${total}`;
+    }
 }
 
 function removeFromCart(index) {
