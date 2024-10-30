@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="test.css">
     <title>烏龜網站</title>
 </head>
 
@@ -22,55 +21,104 @@
     </div>
 
     <div class="turtletitle" style="margin-top: 130px;">陸龜</div>
+
     <div class="turtle" id="productList">
         <div class="turtlepicdiv">
-            <a href="./turtle/leopard.html"><img src="../img/LeopardTortoise.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic product-image"></a>
+            <a href="./turtle/leopard.html">
+                <div class="turtlepic-container">
+                    <img src="../img/LeopardTortoise.pdf" alt="帳號" id="LeopardTortoiseIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>豹龜</div>
-            <button onclick="addToCart('豹龜', 3260)">加入購物車</button>
+            <button onclick="addToCart('豹龜', 3260, document.getElementById('LeopardTortoiseIcon'))">加入購物車</button>
         </div>
+
         <div class="turtlepicdiv">
-            <a href="./turtle/hermanns.html"><img src="../img/赫曼.png" alt="帳號" id="HermannsTortoiseIcon" class="turtlepic"></a>
+            <a href="./turtle/hermanns.html">
+                <div class="turtlepic-container">
+                    <img src="../img/赫曼.png" alt="帳號" id="HermannsTortoiseIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>赫曼</div>
-            <button onclick="addToCart('赫曼', 1280)">加入購物車</button>
+            <button onclick="addToCart('赫曼', 1280, document.getElementById('HermannsTortoiseIcon'))">加入購物車</button>
         </div>
+
         <div class="turtlepicdiv">
-            <a href="./turtle/RedFooted.html"><img src="../img/紅腿象龜.pdf" alt="帳號" id="RedFootedTortoiseIcon" class="turtlepic"></a>
+            <a href="./turtle/RedFooted.html">
+                <div class="turtlepic-container">
+                    <img src="../img/紅腿象龜.pdf" alt="帳號" id="RedFootedTortoiseIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>紅腿象龜</div>
-            <button onclick="addToCart('紅腿象龜', 3000)">加入購物車</button>
+            <button onclick="addToCart('紅腿象龜', 3000, document.getElementById('RedFootedTortoiseIcon'))">加入購物車</button>
         </div>
+
+
         <div class="turtlepicdiv">
-            <a href="./turtle/Sulcata.html"><img src="../img/蘇卡達.pdf" alt="帳號" id="SulcataTortoiseIcon" class="turtlepic"></a>
+            <a href="./turtle/Sulcata.html">
+                <div class="turtlepic-container">
+                    <img src="../img/蘇卡達.pdf" alt="帳號" id="SulcataTortoiseIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>蘇卡達</div>
-            <button onclick="addToCart('蘇卡達', 2800)">加入購物車</button>
+            <button onclick="addToCart('蘇卡達', 2800, document.getElementById('SulcataTortoiseIcon'))">加入購物車</button>
         </div>
     </div>
+
 
     <div class="turtletitle">澤龜</div>
     <div class="turtle2">
         <div class="turtlepicdiv">
-            <a href="./turtle/Pelomedusa.html"><img src="../img/沼澤側頸龜.pdf" alt="帳號" id="PelomedusaSubrufaIcon" class="turtlepic "></a>
+            <a href="./turtle/Pelomedusa.html">
+                <div class="turtlepic-container">
+                    <img src="../img/沼澤側頸龜.pdf" alt="帳號" id="PelomedusaSubrufaIcon" class="turtlepic ">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>沼澤側頸龜</div>
-            <button onclick="addToCart('沼澤側頸龜', 1180)">加入購物車</button>
+            <button onclick="addToCart('沼澤側頸龜', 1180, document.getElementById('PelomedusaSubrufaIcon'))">加入購物車</button>
         </div>
+
         <div class="turtlepicdiv">
-            <a href="./turtle/Pseudemy.html"><img src="../img/甜甜圈龜.pdf" alt="帳號" id="PseudemysNelsoniIcon" class="turtlepic"></a>
+            <a href="./turtle/Pseudemy.html">
+                <div class="turtlepic-container">
+                    <img src="../img/甜甜圈龜.pdf" alt="帳號" id="PseudemysNelsoniIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>甜甜圈龜</div>
-            <button onclick="addToCart('甜甜圈龜', 500)">加入購物車</button>
+            <button onclick="addToCart('甜甜圈龜', 500, document.getElementById('PseudemysNelsoniIcon'))">加入購物車</button>
         </div>
+
         <div class="turtlepicdiv">
-            <a href="./turtle/Common.html"><img src="../img/麝香蛋龜.pdf" alt="帳號" id="CommonMuskTurtleIcon" class="turtlepic"></a>
+            <a href="./turtle/Common.html">
+                <div class="turtlepic-container">
+                    <img src="../img/麝香蛋龜.pdf" alt="帳號" id="CommonMuskTurtleIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>麝香蛋龜</div>
-            <button onclick="addToCart('麝香蛋龜', 777)">加入購物車</button>
+            <button onclick="addToCart('麝香蛋龜', 777, document.getElementById('CommonMuskTurtleIcon'))">加入購物車</button>
         </div>
+
         <div class="turtlepicdiv">
-           <a href="./turtle/EmysOrbicularis.html"> <img src="../img/歐洲澤龜.pdf" alt="帳號" id="EmysOrbicularisIcon" class="turtlepic"></a>
+            <a href="./turtle/EmysOrbicularis.html">
+                <div class="turtlepic-container">
+                    <img src="../img/歐洲澤龜.pdf" alt="帳號" id="EmysOrbicularisIcon" class="turtlepic">
+                    <div class="overlay"></div>
+                </div>
+            </a>
             <div>歐洲澤龜</div>
-            <button onclick="addToCart('歐洲澤龜', 2680)">加入購物車</button>
+            <button onclick="addToCart('歐洲澤龜', 2680, document.getElementById('EmysOrbicularisIcon'))">加入購物車</button>
         </div>
     </div>
     <br><br><br>
 
-    <script src="main2.js"></script>
+    <script src="main.js"></script>
     <script src="cart.js"></script>
 
 
