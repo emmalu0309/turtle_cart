@@ -50,7 +50,7 @@ function addToCart(name, price) {
         cart.push({ name: name, price: price, quantity: 1 });  // 新增商品
     }
     saveCart(cart);
-    alert(`${name} 已加入購物車`);
+    // alert(`${name} 已加入購物車`);
 }
 
 // 在 cart.html 顯示購物車內容
