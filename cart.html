@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購物車</title>
     <link rel="stylesheet" href="cart.css">
 </head>
+
 <body>
     <div class="header">
-        <a href="main.html"><div class="title">烏龜專賣店</div></a>
+        <a href="main.html">
+            <div class="title">烏龜專賣店</div>
+        </a>
         <div class="icon-container">
             <a href="main.html"> <img src="../img/home.png" alt="主頁" id="userIcon" class="icon"></a>
-           <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon" ></a>
+            <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon"></a>
             <a href="cart.html"><img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon"></a>
+            <span id="cartTotal"></span>
             <a href="aboutus.html"><img src="../img/doc_icon.png" alt="關於我們" id="docIcon" class="icon"></a>
         </div>
     </div>
-    <div  >
+    <div>
         <h1>購物車</h1>
-        
+
     </div>
     <!-- 購物車顯示區域 -->
-    <div id="cart" class="cart" >
+    <div id="cart" class="cart">
         <div style="font-size: 40px;">購物車</div>
         <ul id="cartItems"></ul>
         <p id="totalPrice">總價: $0</p>
@@ -30,26 +35,27 @@
         <br>
         <a href="main.html">返回購物</a>
     </div>
-     <!-- 寄送資料表單 -->
-     <div id="shippingForm" style="display: none;" class="shipping">
+    <!-- 寄送資料表單 -->
+    <div id="shippingForm" style="display: none;" class="shipping">
         <h2>填寫寄送資料</h2>
         <form id="shippingInfoForm">
             <label for="name">姓名：</label>
             <input type="text" id="name" name="name" required><br><br>
-            
+
             <label for="address">地址：</label>
             <input type="text" id="address" name="address" required><br><br>
-            
+
             <label for="phone">電話：</label>
             <input type="tel" id="phone" name="phone" required><br><br>
-            
+
             <label for="email">電子郵件：</label>
             <input type="email" id="email" name="email" required><br><br>
-            
+
             <button type="submit">確認訂單</button>
         </form>
     </div>
-</div>
+    </div>
     <script src="cart.js"></script>
 </body>
+
 </html>
