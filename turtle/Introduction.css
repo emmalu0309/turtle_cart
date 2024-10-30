@@ -50,6 +50,7 @@ a:visited {
         object-fit:cover; 
         border-radius: 30px;
         margin-right: 60px;
+        cursor: pointer;
     }
 }
 .content{
@@ -64,4 +65,11 @@ a:visited {
 }
 .intitle{
     font-size: 30px;
+}
+.flying-image {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transition: all 1s ease-in-out;
+    z-index: 1000;
 }

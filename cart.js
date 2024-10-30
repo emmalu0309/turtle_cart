@@ -43,18 +43,6 @@ function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// 將商品加入購物車
-// function addToCart(name, price) {
-//     let cart = getCart();
-//     let item = cart.find(product => product.name === name);
-//     if (item) {
-//         item.quantity += 1;  // 如果商品已存在，增加數量
-//     } else {
-//         cart.push({ name: name, price: price, quantity: 1 });  // 新增商品
-//     }
-//     saveCart(cart);
-//     // alert(`${name} 已加入購物車`);
-// }
 
 // 在 cart.html 顯示購物車內容
 function displayCart() {

@@ -16,13 +16,13 @@
         <div class="icon-container">
             <a href="../main.html"> <img src="../img/home.png" alt="主頁" id="userIcon" class="icon"></a>
             <a href="../login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon"></a>
-            <a href="../cart.html"><img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon"></a>
+            <a href="../cart.html"><img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon cart-icon"></a>
             <a href="../aboutus.html"><img src="../img/doc_icon.png" alt="關於我們" id="docIcon" class="icon"></a>
         </div>
     </div>
     <div class="content">
         <div class="turtle">
-            <img src="../img/歐洲澤龜.pdf" alt="歐洲澤龜" class="turtleimg">
+            <img src="../img/歐洲澤龜.pdf" alt="歐洲澤龜" id="EmysOrbicularisIcon" class="turtleimg">
         </div>
         <div class="intro">
             <div class="intitle">歐洲澤龜簡介</div>
@@ -32,7 +32,7 @@
             <div>- 飼養溫度：18-28度</div>
             <div>- 飼養注意事項：一般水龜飼料,麵包蟲,冷凍紅蟲,小魚小蝦,青菜牠們都可以完全接受.由於食量大,成長也很快速,大約3-4年就可以由幼龜養成成龜.</div>
             <br>
-            <button onclick="addToCart('歐洲澤龜', 2680)">加入購物車</button>
+            <button onclick="addToCart('歐洲澤龜', 2680,document.getElementById('EmysOrbicularisIcon'))">加入購物車</button>
         </div>
     </div>
     <script src="../main.js"></script>
