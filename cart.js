@@ -45,6 +45,10 @@ function saveCart(cart) {
 
 // 結帳按鈕點擊事件，檢查購物車是否有內容
 document.getElementById("checkoutBtn")?.addEventListener("click", function () {
+    let cart = getCart();
+    if (cart.length === 0) {
+        alert("購物車是空的，無法結帳！");
+    }
 
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
@@ -64,6 +68,7 @@ document.getElementById("checkoutBtn")?.addEventListener("click", function () {
         alert("請先登入以查看您的會員資訊");
         window.location.href = "login.html"; // 跳轉到登入頁面
     }
+    
     
 });
 
