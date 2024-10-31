@@ -92,5 +92,19 @@ body{
     transition: all 1s ease-in-out;
     z-index: 1000;
 }
+#cartTotal{
+    position: absolute;
+    top: 20px;
+    right: 95px;
+    border-radius: 99em;
+    width: 23px;
+    height: 23px;
+    text-align: center; 
+    display:block;
+    background-color: lightcoral;
+    color: white;
+    font-weight: bolder;
+    padding: 2px;
+}
 
 
