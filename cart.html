@@ -35,26 +35,33 @@
         <br>
         <a href="main.html">返回購物</a>
     </div>
-    <!-- 寄送資料表單 -->
-    <div id="shippingForm" style="display: none;" class="shipping">
-        <h2>填寫寄送資料</h2>
-        <form id="shippingInfoForm">
-            <label for="name">姓名：</label>
-            <input type="text" id="name" name="name" required><br><br>
 
-            <label for="address">地址：</label>
-            <input type="text" id="address" name="address" required><br><br>
+    <div id="userInfo" style="display: none;" class="shipping">
+        <h3>會員資訊</h3>
+        <form id="userForm">
 
-            <label for="phone">電話：</label>
-            <input type="tel" id="phone" name="phone" required><br><br>
+            <label>姓名:</label>
+            <input type="text" id="displayName"><br>
 
-            <label for="email">電子郵件：</label>
-            <input type="email" id="email" name="email" required><br><br>
+            <label>地址:</label>
+            <input type="text" id="displayAddress"><br>
 
-            <button type="submit">確認訂單</button>
+            <label>電話:</label>
+            <input type="text" id="displayPhone"><br>
+
+            <label>電子郵件:</label>
+            <input type="email" id="displayEmail"><br>
+
+            <label style="display: none;">帳號:</label>
+            <input type="text" id="displayUsername" disabled style="display: none;"><br>
+            <label style="display: none;">密碼:</label>
+            <input type="password" id="displayPassword" style="display: none;"><br>
+
+            <button type="submit">結帳</button>
         </form>
     </div>
-    </div>
+
+
     <script src="cart.js"></script>
 </body>
 

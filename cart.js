@@ -43,46 +43,39 @@ function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-
-// 在 cart.html 顯示購物車內容
-// function displayCart() {
-//     let cart = getCart();
-//     let cartItems = document.getElementById("cartItems");
-//     let totalPrice = document.getElementById("totalPrice");
-
-//     cartItems.innerHTML = "";
-//     let total = 0;
-
-//     cart.forEach(item => {
-//         let li = document.createElement("li");
-//         li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
-//         cartItems.appendChild(li);
-//         total += item.price * item.quantity;
-//     });
-
-//     totalPrice.textContent = `總價: $${total}`;
-
-// }
-
 // 結帳按鈕點擊事件，檢查購物車是否有內容
 document.getElementById("checkoutBtn")?.addEventListener("click", function () {
-    let cart = getCart();
-    if (cart.length === 0) {
-        alert("購物車是空的，無法結帳！");
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
+    if (isLoggedIn) {
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser && cart.length != 0) {
+            // 顯示會員資訊表單並填入資料
+            document.getElementById("userInfo").style.display = "block";
+            document.getElementById("displayName").value = currentUser.name || "";
+            document.getElementById("displayAddress").value = currentUser.address || "";
+            document.getElementById("displayPhone").value = currentUser.phone || "";
+            document.getElementById("displayEmail").value = currentUser.email || "";
+            document.getElementById("displayUsername").value = currentUser.username;
+            document.getElementById("displayPassword").value = currentUser.password;
+        }
     } else {
-        // 顯示寄送資料表單
-        document.getElementById("shippingForm").style.display = "block";
+        alert("請先登入以查看您的會員資訊");
+        window.location.href = "login.html"; // 跳轉到登入頁面
     }
+    
 });
 
 // 處理表單提交
-document.getElementById("shippingInfoForm")?.addEventListener("submit", function (event) {
+document.getElementById("userForm")?.addEventListener("submit", function (event) {
     event.preventDefault(); // 防止表單提交後刷新頁面
 
-    const name = document.getElementById("name").value;
-    const address = document.getElementById("address").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
+    const name = document.getElementById("displayName").value;
+    const address = document.getElementById("displayAddress").value;
+    const phone = document.getElementById("displayPhone").value;
+    const email = document.getElementById("displayEmail").value;
+ 
 
     // 新增訂單商品及價格的訊息
     const cart = getCart();
@@ -100,46 +93,45 @@ document.getElementById("shippingInfoForm")?.addEventListener("submit", function
     alert(`訂單已確認！\n姓名: ${name}\n地址: ${address}\n電話: ${phone}\n電子郵件: ${email}\n\n${orderDetails}`);
 
     // 清空表單並隱藏寄送資料表單
-    document.getElementById("shippingInfoForm").reset();
-    document.getElementById("shippingForm").style.display = "none";
+    // document.getElementById("shippingInfoForm").reset();
+    document.getElementById("userInfo").style.display = "none";
 
     // 清空購物車
     localStorage.removeItem("cart");
     displayCart();
+
+    //更新會員資料
+    const updatedUser = {
+        address: document.getElementById("displayAddress").value,
+        phone: document.getElementById("displayPhone").value,
+        email: document.getElementById("displayEmail").value,
+        name: document.getElementById("displayName").value,
+        password: document.getElementById("displayPassword").value,
+        username: document.getElementById("displayUsername").value
+    };
+
+    // 更新 currentUser 資料並儲存到 localStorage
+    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+
+    // 更新 users 列表
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const updatedUsers = users.map(user => user.username === updatedUser.username ? updatedUser : user);
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+
 });
 
 // 初始化購物車頁面
 if (window.location.pathname.includes("cart.html")) {
     displayCart();
 }
-// 結帳按鈕點擊事件，檢查購物車是否有內容
-// document.getElementById("checkoutBtn")?.addEventListener("click", function() {
-//     let cart = getCart();
-//     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-//     if (!isLoggedIn) {
-//         alert("請先登入才能結帳！");
-//         window.location.href = "login.html"; // 導向登入頁面
-//     } else if (cart.length === 0) {
-//         alert("購物車是空的，無法結帳！");
-//     } else {
-//         // 顯示寄送資料表單
-//         document.getElementById("shippingForm").style.display = "block";
-//     }
-// });
-
-
-
-
-// 初始化頁面
-// document.addEventListener("DOMContentLoaded", loadCartFromLocalStorage);
 document.addEventListener("DOMContentLoaded", displayCart);
 
 function displayCart() {
     let cart = getCart();
     let cartItems = document.getElementById("cartItems");
     let totalPrice = document.getElementById("totalPrice");
-    
+
     console.log(cart.length);
     let cartLength = cart.length;
     document.getElementById("cartTotal").textContent = cartLength;
@@ -166,7 +158,7 @@ function displayCart() {
         cartItems.appendChild(li);
 
         total += item.price * item.quantity;
-    
+
     });
     if (totalPrice != null) {
         totalPrice.textContent = `總價: $${total}`;
@@ -181,17 +173,8 @@ function removeFromCart(index) {
     displayCart();
 }
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     // 初始載入購物車數量
-//     const cartLength = parseInt(localStorage.getItem("CartLength"), 10) || 0;
-//     document.getElementById("cartTotal").textContent = cartLength;
 
-//     // 監聽 storage 事件以同步更新
-//     window.addEventListener("storage", function (event) {
-//         if (event.key === "CartLength") {
-//             // 更新顯示的購物車總數
-//             document.getElementById("cartTotal").textContent = event.newValue || 0;
-//         }
-//     });
-// });
+
+
+
 

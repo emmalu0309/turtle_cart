@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>會員登入</title>
 </head>
+
 <body>
     <div class="header">
-        <a href="main.html"><div class="title">烏龜專賣店</div></a>
+        <a href="main.html">
+            <div class="title">烏龜專賣店</div>
+        </a>
         <div class="icon-container">
             <a href="main.html"> <img src="../img/home.png" alt="主頁" id="userIcon" class="icon"></a>
-           <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon" ></a>
+            <a href="login.html"> <img src="../img/user_icon.png" alt="帳號" id="userIcon" class="icon"></a>
             <a href="cart.html"><img src="../img/cart_icon.png" alt="購物車" id="cartIcon" class="icon"></a>
-           <span id="cartTotal"></span>
+            <span id="cartTotal"></span>
             <a href="aboutus.html"><img src="../img/doc_icon.png" alt="關於我們" id="docIcon" class="icon"></a>
         </div>
     </div>
 
-    
-    <div class="loginform">
+
+    <div class="loginform" id="loginForm">
         <h2 class="title">會員登入</h2>
         <form id="login">
             <span class="smtitle" for="loginUsername">帳號:</span>
@@ -33,7 +37,25 @@
         <div id="message"></div>
     </div>
 
+    <div id="userInfoForm" style="display:none;" class="loginform">
+        <h2>會員資料</h2>
+        <label>會員名稱</label>
+        <input type="text" id="displayUsername" readonly class="input"><br>
+        <label>密碼</label>
+        <input type="password" id="displayPassword" class="input"><br>
+        <label>姓名</label>
+        <input type="text" id="displayName" class="input"><br>
+        <label>電話</label>
+        <input type="text" id="displayPhone" class="input"><br>
+        <label>住家地址</label>
+        <input type="text" id="displayAddress" class="input"><br>
+        <label>電子郵件</label>
+        <input type="email" id="displayEmail" class="input"><br>
+        <button id="saveBtn" class="loginBtn">儲存變更</button>
+        <button id="logoutBtn" class="loginBtn">登出</button>
+    </div>
+
     <script src="login.js"></script>
 </body>
+
 </html>
-    
